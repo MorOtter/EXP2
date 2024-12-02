@@ -1,0 +1,30 @@
+{
+    "name": "scss-altered-for-experiment",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon server.js --ignore log.json",
+        "start": "node server.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@google-cloud/storage": "^5.7.0",
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "dropbox": "^10.34.0",
+        "ejs": "^3.1.10",
+        "express": "^4.17.1",
+        "express-flash": "^0.0.2",
+        "express-session": "^1.17.1",
+        "method-override": "^3.0.0",
+        "pg": "^8.5.1",
+        "supertest": "^7.0.0",
+        "update": "^0.7.4",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.4"
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGazer Test</title>
+    <script src="/public/scripts/webgazer.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css" rel="stylesheet">
+    <style>
+        .calibration-point {
+            width: 15px;
+            height: 15px;
+            background-color: rgb(29, 127, 188);
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="custom-navbar">
+        <div class="navbar-logo">
+            <a>SCSS</a>
+        </div>
+
+    </nav>
+    <section>
+        <!-- Calibration Points -->
+        <!-- Top-Left Segment (Dice 4 pattern) -->
+        <div id="calibrationPoint1" class="calibration-point" style="left: 11.1%; top: 12.5%;"></div>
+        <div id="calibrationPoint2" class="calibration-point" style="left: 22.2%; top: 12.5%;"></div>
+        <div id="calibrationPoint4" class="calibration-point" style="left: 11.1%; top: 37.5%;"></div>
+        <div id="calibrationPoint5" class="calibration-point" style="left: 22.2%; top: 37.5%;"></div>
+
+        <!-- Top-Center Segment (Centered vertically with horizontal spacing) -->
+        <div id="calibrationPoint6" class="calibration-point" style="left: 38.8%; top: 25%;"></div>
+        <div id="calibrationPoint7" class="calibration-point" style="left: 61.1%; top: 25%;"></div>
+
+        <!-- Top-Right Segment (Dice 4 pattern) -->
+        <div id="calibrationPoint8" class="calibration-point" style="left: 72.2%; top: 12.5%;"></div>
+        <div id="calibrationPoint9" class="calibration-point" style="left: 83.3%; top: 12.5%;"></div>
+        <div id="calibrationPoint11" class="calibration-point" style="left: 72.2%; top: 37.5%;"></div>
+        <div id="calibrationPoint12" class="calibration-point" style="left: 83.3%; top: 37.5%;"></div>
+
+        <!-- Bottom-Left Segment (Dice 4 pattern) -->
+        <div id="calibrationPoint13" class="calibration-point" style="left: 11.1%; top: 62.5%;"></div>
+        <div id="calibrationPoint14" class="calibration-point" style="left: 22.2%; top: 62.5%;"></div>
+        <div id="calibrationPoint16" class="calibration-point" style="left: 11.1%; top: 87.5%;"></div>
+        <div id="calibrationPoint17" class="calibration-point" style="left: 22.2%; top: 87.5%;"></div>
+
+        <!-- Bottom-Center Segment (Centered vertically with horizontal spacing) -->
+        <div id="calibrationPoint18" class="calibration-point" style="left: 38.8%; top: 75%;"></div>
+        <div id="calibrationPoint19" class="calibration-point" style="left: 61.1%; top: 75%;"></div>
+
+        <!-- Bottom-Right Segment (Dice 4 pattern) -->
+        <div id="calibrationPoint20" class="calibration-point" style="left: 72.2%; top: 62.5%;"></div>
+        <div id="calibrationPoint21" class="calibration-point" style="left: 83.3%; top: 62.5%;"></div>
+        <div id="calibrationPoint23" class="calibration-point" style="left: 72.2%; top: 87.5%;"></div>
+        <div id="calibrationPoint24" class="calibration-point" style="left: 83.3%; top: 87.5%;"></div>
+    </section>
+    <script src="/public/scripts/calibration.js"></script>
+</body>
+</html>

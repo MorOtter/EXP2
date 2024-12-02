@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/css/style.css" rel="stylesheet">
+    
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="/public/scripts/webgazer.js"></script>
+        <!-- <script src="/public/scripts/webgazerHandler.js"></script> -->
+        <!-- Favicon -->
+        <link rel="icon" href="/public/assets/favicon.webp" type="image/x-icon">
+        <!-- Page Title -->
+        <title>Security Control Simulation System</title>
+
+        <style>
+            h1 {text-align: center;}
+            h2 {text-align: center;}
+            p {text-align: left;}
+            div {text-align: center;}
+            </style>
+
+    </head>
+
+    <body>
+        <nav class="custom-navbar">
+            <div class="navbar-logo">
+                <a href="#">SCSS</a>
+            </div>
+        </nav>
+    
+        <div class="info" id="webgazerInstructions">
+            <h1>WebGazer Eye Tracking Calibration</h1>
+            <br>
+            <h2>Please allow webcam access before starting the calibration.</h2>
+            <br>
+            <ol>
+                    <h2><b>Initial view.</b></h2>
+                    <div class="img-container text-center">
+                        <img src="/public/assets/eyetrackinginstructions1.png" alt="Initial view" class="img-fluid" style="max-width: 400px; height: auto;">
+                    </div>
+            <br>
+                    <h2><b>Focus and begin left mouse clicking on one blue square.</b></h2>
+                    <div class="img-container text-center">
+                        <img src="/public/assets/eyetrackinginstructions2.png" alt="Clicking on blue square" class="img-fluid" style="max-width: 400px; height: auto;">
+                    </div>
+            <br>   
+                    <h2><b>The square will turn red when calibrated.</b></h2>
+                    <div class="img-container text-center">
+                        <img src="/public/assets/eyetrackinginstructions3.png" alt="Calibrated red square" class="img-fluid" style="max-width: 400px; height: auto;">
+                    </div>
+                
+            </ol>
+            
+            <br>
+            <br>
+
+            <p><b>DETAILED INSTRUCTIONS</b></p>  
+            <p>Look at the screen with blue squares as shown in the first image.</p>
+            <p>Focus on one blue square at a time.</p>
+            <p>While looking at the square, click on it 5 times.</p>
+            <p>Keep your gaze on the square until it turns red.</p>
+            <p>Move to the next blue square and repeat steps 2-4.</p>
+            <p>Continue until all squares have turned red.</p>
+
+            <br>
+
+            <p><b>Please note that only numerical data will be recorded from this eye tracker, no visual data will be recorded, stored or in anyway accessable to the researcher.</b></p>
+            
+            <br>
+
+            <p class="important-note">For optimal eye tracking performance, maintain your focus on only the square you are clicking on throughout the process.</p>
+            <button type="button" id="continue">Continue</button>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="/public/scripts/webgazer.js"></script>
+        <script>
+            document.getElementById("continue").addEventListener("click", () => {
+                window.location.href = '/information/webgazerconfig';
+            });
+        </script>
+    </body>
+    </html>
+    
+    

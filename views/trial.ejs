@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/css/style.css" rel="stylesheet">
+    
+        <!-- Custom Styles -->
+        <style>
+            .hidden {
+                display: none;
+            }
+            .panels {
+                display: flex;
+                flex-direction: row;
+                height: calc(100vh - 60px); /* Adjust based on your navbar height */
+            }
+            #game-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh;          /* Full viewport height */
+    flex-direction: column;  /* Align children in a column */
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure full width */
+    position: relative;
+   }
+    #primary-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px; /* Set a fixed height */
+        background-color: rgba(240, 240, 240, 0.9);
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 10;
+    }
+
+    
+            #game img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+    
+            #primary-info h4 {
+                margin: 0;
+                font-weight: bold;
+                color: #2c3e50;
+            }
+            #dronesInfoContainer, #recommendations {
+                width: 20%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+        </style>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/pako/dist/pako.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="/public/scripts/webgazer.js" async></script>
+        
+        <!-- Favicon -->
+        <link rel="icon" href="/public/assets/favicon.webp" type="image/x-icon">
+        <!-- Page Title -->
+        <title>Security Control Simulation System</title>
+    </head>
+<script>
+    var packetArray = JSON.parse('<%- packetArray %>');
+    var conditionText = "<%= conditionText %>";
+    var group = "<%= group %>";
+    var censoredInfo = "<%= censorship %>";
+    var censoredArrayNumber = parseInt('<%= censoredArrayNumber %>');
+</script>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="custom-navbar">
+        <!-- Left Side -->
+        <div>
+            <div class="navbar-logo">
+                <a href="/">SCSS - <b>THE TASK MAY TAKE A FEW SECONDS TO BOTH START AND END, PLEASE WAIT.</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="panels">
+        <!-- Left Panel -->
+        <aside id="dronesInfoContainer">
+            <!-- Connection Information Section -->
+            <section class="parameters">
+                <h4>This is the recommendation that you have made:</h4>
+                <div class="connection-info">
+                    <div class="secondary-info">
+                        <h4 id="info-checksum" class="hidden">Packet Size: Unavailable</h4>
+                        <h4 id="info-time" class="hidden">Connection Time: Unavailable</h4>
+                        <h4 id="info-ip" class="hidden">IP Address: Unavailable</h4>
+                        <h4 id="info-country" class="hidden">Country: Unavailable</h4>
+                    </div>
+                    <h4 id="info-classification">Unclassified</h4>
+                </div>
+            </section>
+
+            <!-- Drone Classification Buttons -->
+            <section class="droneButtons">
+                <h4>Classification:</h4>
+                <div>
+                    <button id="trusted" type="button">Trusted</button>
+                    <button id="suspect" type="button">Suspect</button>
+                    <button id="hostile" type="button">Hostile</button>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Middle Panel -->
+        <div id="game-container">
+            <div id="primary-info">
+                <h4 id="info-portnumber">Port Number: Unavailable</h4>
+                <h4 id="info-protocol">Protocol: Unavailable</h4>
+                <h4 id="info-certificates">Certificates: Unavailable</h4>
+            </div>
+            <section id="game">
+                <img draggable="false" src="../public/assets/radarLines.png">
+            </section>
+        </div>
+
+        <!-- Right Panel (Recommendations) -->
+        <aside id="recommendations">
+            <div class="h-50 d-flex flex-column justify-content-center">
+                <h4 id="conditionText"></h4>
+                <h4 id="condition"></h4>
+                <h5 id="advice"></h5>
+            </div>
+            <div class="h-50 d-flex flex-column justify-content-center">
+                <button type="submit" id="accept">Accept Recommendation</button>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Additional Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script type="module" src="../public/scripts/trial.js"></script>
+</body>
+</html>

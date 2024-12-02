@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/css/style.css" rel="stylesheet">
+    
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> -->
+        <!-- Favicon -->
+        <link rel="icon" href="/public/assets/favicon.webp" type="image/x-icon">
+        <!-- Page Title -->
+        <title>Security Control Simulation System</title>
+        <style>
+            .criteria-table {
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto;
+            }
+            .criteria-table th, .criteria-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            .criteria-table th {
+                background-color: #f2f2f2;
+            }
+            .hostile {
+                background-color: #ffcccc;
+            }
+            .trusted {
+                background-color: #ccffcc;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="custom-navbar">
+            <div class="navbar-logo">
+                <a>SCSS</a>
+            </div>
+        </nav>
+        <section class="info centered">
+            <h1>Rules</h1>
+        
+            <p>Please take as long as you need to read through these rules and ensure you fully understand them as they will not be present during the task itself.</p>
+            <p>Click on each incoming data packet (dot) before it reaches the system you are defending at the centre of the screen. Upon clicking on each data packet, you will receive three pieces of crucial information:</p>
+            
+            <ul>
+               <li>1) Port Number</li>
+               <li>2) Protocol</li>
+               <li>3) Certificate Status</li>
+            </ul>
+        
+            <p>Based on this information, classify each packet as either "Hostile," "Suspect," or "Trusted" using the buttons on the side of the screen.</p>
+        
+            <h2>Classification Rules:</h2>
+            <p>For each data packet, you must determine if its attributes are hostile or trusted. Then, classify the packet based on the following rules:</p>
+            
+            <ul>
+                <li>If all 3 attributes are hostile = Classify as "Hostile"</li>
+                <li>If 1 or 2 attributes are hostile = Classify as "Suspect"</li>
+                <li>If 0 attributes are hostile = Classify as "Trusted"</li>
+            </ul>
+        
+            <h2>Classification Criteria:</h2>
+            <p>Use the following information to determine if each attribute is hostile or trusted:</p>
+        
+            <table class="criteria-table table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Hostile</th>
+                        <th>Trusted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Port Number</td>
+                        <td class="hostile">4444</td>
+                        <td class="trusted">80</td>
+                    </tr>
+                    <tr>
+                        <td>Protocol</td>
+                        <td class="hostile">ICMP</td>
+                        <td class="trusted">HTTPS</td>
+                    </tr>
+                    <tr>
+                        <td>Certificates</td>
+                        <td class="hostile">Expired</td>
+                        <td class="trusted">Valid</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <h2>Example of how it will look</h2>
+    
+            <div class="text-center">
+                <img src="../public/assets/screeninaction.png" alt="Labelled Cyber Defence System" class="img-fluid" style="max-width: 400px; height: auto;">
+            </div>
+            
+            <h3>Additional Notes:</h3>
+       
+            <ul>
+                <li>Data packets will always move at a constant speed towards the centre.</li>
+                <li>Unclassified or misclassified packets that reach the centre may compromise your system.</li>
+                <li>There will only ever be two data packets maximum on the screen at once.</li>
+                <li>Packets can be clicked multiple times to review their information before and after classification.</li>
+                <li>You can reclassify the packets up until they hit the centre and disappear</li>
+                <li>In total you will run through the task 5 times, with each having 24 packets to classify.</li>
+            </ul>
+    
+       
+        <p class="mt-3"><small>The trial may take some time to load and close, please be patient.</small></p>
+        <button id="proceedToTrial" class="btn btn-primary">Start Trial</button>
+    </section>
+
+</body>
+<script>
+    document.getElementById("proceedToTrial").addEventListener("click", () => {
+        window.location.href = '/trial/trial';
+    })
+</script>
+</html>

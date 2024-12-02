@@ -1,0 +1,43 @@
+  table_name  |      column_name      |          data_type          
+--------------+-----------------------+-----------------------------
+ participants | experiment_start_time | timestamp without time zone
+ participants | participant_id        | integer
+ participants | group_name            | text
+ participants | censored_information  | character varying
+ participants | feedback              | character varying
+ participants | censorship_group      | character varying
+ participants | condition             | character varying
+
+
+ trials     | trial_number   | integer
+ trials     | participant_id | integer FOREIGN KEY -> participants
+ trials     | start_time     | timestamp without time zone
+ trials     | end_time       | timestamp without time zone
+ trials     | trial_id       | integer
+ trials     | trial_type     | character varying
+ trials     | video_url      | text
+
+ packets    | packet_id              | integer
+ packets    | trial_id               | integer FOREIGN KEY -> trials
+ packets    | accepted               | boolean
+ packets    | classified_time        | timestamp without time zone
+ packets    | user_input             | character varying
+ packets    | advisor_recommendation | character varying
+
+ scales     | scale_id       | integer
+ scales     | participant_id | integer FOREIGN KEY -> participants
+ scales     | scale_type     | character varying
+ scales     | scale_phase    | character varying
+
+ items      | id          | integer
+ items      | item_id     | integer // this is the item number for the scale
+ items      | scale_id    | integer FOREIGN KEY -> scales
+ items      | item_value  | integer
+
+ gaze_data  | id          | integer
+ gaze_data  | trial_id    | integer FOREIGN KEY -> trials 
+ gaze_data  | x           | float
+ gaze_data  | y           | float
+ gaze_data  | elapsed_time| integer
+
+
